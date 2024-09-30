@@ -1,0 +1,50 @@
+name: CI-CD pipeline for AWS VPC creation using Terraform
+run-name: Deployed by  @${{ github.actor }}
+
+
+on :  
+  push:
+    branches:
+      - 'main'
+
+env:
+ 
+  AWS_ACCESS_KEY       : ${{ secrets.AWS_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+
+jobs:
+  build:
+    name     : Terraform Commands 
+    runs-on  : ubuntu-latest
+    steps:
+      - name : Checkout 
+        uses : action/checkout@v2
+      
+      - name : Set up Terraform
+        uses : hashicorp/setup-terraform@v2
+
+      - name : Terraform init 
+        run  :  terraform init  
+        working-directory : ./Terraform-VPC
+
+      - name : Terraform validate 
+        id   : validate 
+        run  :  terraform validate
+        working-directory: ./Terraform-VPC 
+        
+      - name : Terraform plan  
+        id   :  plan 
+        run  :  terraform plan 
+        working-directory: ./Terraform-VPC 
+       
+      - name : Terraform  Apply 
+        id   :  apply
+        run  :  terraform apply -auto-approve
+        working-directory: ./Terraform-VPC 
+
+
+ 
+
+
+      
