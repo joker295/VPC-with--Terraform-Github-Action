@@ -1,31 +1,29 @@
 name     : Destroy CI-CD.yml infrastructure
 run-name : Destroyed by @${{ github.actor }}
 
-on :
-   workflow_dispatch :
-
+on:
+  workflow_dispatch:
 
 env:
- 
-  AWS_ACCESS_KEY       : ${{ secrets.AWS_ACCESS_KEY }}
+  AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+jobs:
+  destroy:
+    name: TF Destroy
+    runs-on: ubuntu-latest
 
-jobs :
-    destroy:
-        name    : TF Destroy
-        runs-on : ubunu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v2
-           
-          - name: Set up Terraform 
-            uses:  hashicorp/setup-terraform@v2
-           
-          - name: Terraform init
-            run:  terraform init
-            
-          - name: Terraform Destroy
-            run : terraform destroy -auto-approve
-            working-directory : .
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Initialize Terraform
+        run: terraform init
+        working-directory: .
+
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
+        working-directory: .
