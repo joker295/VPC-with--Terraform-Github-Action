@@ -1,5 +1,5 @@
 # VPC-with--Terraform-Github-Action
-VPC creation using Terraform, Github-Action 
+VPC creation using Terraform, Github-Actions. 
 
 
 This GitHub project provides a comprehensive guide and a set of resources to create and manage infrastructure using Terraform and automate the deployment process using GitHub Actions.
