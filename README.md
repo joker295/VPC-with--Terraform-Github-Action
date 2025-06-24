@@ -14,7 +14,7 @@ Define Infrastructure as Code: Define your infrastructure components, such as vi
 
 Automate Deployment: Set up GitHub Actions workflows to automatically deploy your infrastructure whenever there are changes to your Terraform configuration.
 
-Version Control: Keep your infrastructure code version-controlled and easily collaborate with your team.
+Version Control: Keep your infrastructure code version-controlled and easily collaborate with your teams.
 
 Infrastructure as Code Best Practices: Follow best practices for infrastructure as code, including versioning, code review, and documentation.
 
