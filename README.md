@@ -8,7 +8,7 @@ Terraform is an open-source infrastructure as code (IaC) tool that allows you to
 
 Whereas GitHub Actions is a powerful automation and CI/CD platform provided by GitHub.
 
-By combining Terraform and GitHub Actions, you can:
+By combining Terraform and GitHub Action, you can:
 
 Define Infrastructure as Code: Define your infrastructure components, such as virtual machines, databases, and networks, in a Terraform configuration file.
 
