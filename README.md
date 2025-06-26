@@ -16,6 +16,6 @@ Automate Deployment: Set up GitHub Actions workflows to automatically deploy you
 
 Version Control: Keep your infrastructure code version-controlled and easily collaborate with your teams.
 
-Infrastructure as Code Best Practices: Follow best practices for infrastructure as code, including versioning, code review, and documentation.
+Infrastructure as Code Best Practices: Follow best practices for infrastructure as code, including versioning, code review, and documentations.
 
 This project serves as a starting point for your infrastructure automation journey, providing a basic structure and guidelines to build.
